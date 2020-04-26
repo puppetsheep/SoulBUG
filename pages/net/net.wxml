@@ -3,10 +3,14 @@
   <view slot="content">计算机网络术语</view>
 </cu-custom>
 
+<image src='https://api.puppetsheep.cn/miniprogram/imgs/gotop.png' class='goTop' hidden='{{!floorstatus}}' bindtap="gotop"></image>
 
 <view class="padding-sm flex flex-wrap">
-  <view class="padding-xs" wx:for="{{network}}" wx:key>
+  <view class="padding-xs" wx:for="{{showAll==false?taglist:network}}" wx:key>
     <view class="cu-tag radius line-blue" bindtap="showModal" data-target="{{index}}">{{item.en}}</view>
+  </view>
+  <view class="padding-xs">
+    <view class="cu-tag radius line-red" bindtap="showAll" data-target="{{index}}">{{showAll==false?"展示所有":"收起标签"}}</view>
   </view>
 </view>
 <view wx:for="{{network}}">
