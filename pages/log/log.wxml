@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">更新日志</view>
+</cu-custom>
+
+<view class="cu-timeline" wx:for="{{version}}" wx:for-index="idx" wx:key>
+  <!-- <view class="cu-time">4-24</view> -->
+  <view class="cu-item text-blue">
+    <view class="content">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-green">{{item.time||''}}</view>
+        <view class="cu-tag line-green">{{item.version||''}}</view>
+      </view>
+      <view class="margin-sm" wx:for="{{des[idx]}}" wx:key>
+      <view class="text-darkgray text-shadow">{{index+1}}.{{item||''}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">计算机网络术语</view>
+</cu-custom>
+
+
+<view class="padding-sm flex flex-wrap">
+  <view class="padding-xs" wx:for="{{network}}" wx:key>
+    <view class="cu-tag radius line-blue" bindtap="showModal" data-target="{{index}}">{{item.en}}</view>
+  </view>
+</view>
+<view wx:for="{{network}}">
+  <view class="cu-modal {{modalName==index?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">{{item.en}}（{{item.zh}}）</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl text-gray text-left" style="text-indent:2em;">
+        {{item.des}}
+      </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class="padding-sm" wx:for="{{network}}" wx:key>
+  <view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>
+      <view class="text-shadow text-black">{{item.en}}</view>
+      <view class="text-shadow text-purpleShadow">（{{item.zh}}）</view>
+    </view>
+  </view>
+  <view class="padding bg-white text-df">
+    <view class="text-left text-gray padding-left" style="text-indent:2em;">{{item.des}}</view>
+  </view>
+</view>

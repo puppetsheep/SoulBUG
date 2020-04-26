@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">数学公式</view>
+</cu-custom>
+  <view class="solids-bottom padding-xs flex align-center">
+    <view class="padding">1</view>
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xl padding">
+        <text class="text-gray text-bold">三重积分</text>
+      </view>
+      <image src="https://api.puppetsheep.cn/miniprogram/imgs/tripleintergral.svg" mode="aspectFit" class="flex" style="height:60px;"></image>
+    </view>
+  </view>
+  <view class="solids-bottom padding-xs flex align-center">
+    <view class="padding">2</view>
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xl padding">
+        <text class="text-gray text-bold">二次曲面</text>
+      </view>
+      <image src="https://api.puppetsheep.cn/miniprogram/imgs/quadraticsurface.svg" mode="aspectFit" class="flex" style="height:60px;"></image>
+    </view>
+  </view>
