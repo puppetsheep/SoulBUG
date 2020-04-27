@@ -13,16 +13,19 @@
     <view class="cu-tag radius line-red" bindtap="showAll" data-target="{{index}}">{{showAll==false?"展示所有":"收起标签"}}</view>
   </view>
 </view>
-<view wx:for="{{network}}">
+<view wx:for="{{network}}" catchtap="hideModal">
   <view class="cu-modal {{modalName==index?'show':''}}">
-    <view class="cu-dialog">
+    <view class="cu-dialog" catchtap>
       <view class="cu-bar bg-white justify-end">
         <view class="content">{{item.en}}（{{item.zh}}）</view>
-        <view class="action" bindtap="hideModal">
+        <!-- <view class="action" bindtap="hideModal">
           <text class="cuIcon-close text-red"></text>
-        </view>
+        </view> -->
       </view>
-      <view class="padding-xl text-gray text-left" style="text-indent:2em;">
+      <!-- <view class="padding-sm text-darkgray text-left" style="text-indent:2em;">
+        {{item.en}}（{{item.zh}}）
+      </view> -->
+      <view class="padding-xl text-gray text-left text-df" style="text-indent:2em;">
         {{item.des}}
       </view>
     <view class="cu-bar bg-white">

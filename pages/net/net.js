@@ -58,7 +58,8 @@ Page({
     // console.log(e)
     if (e.scrollTop > 200) {
       this.setData({
-        floorstatus: true
+        floorstatus: true,
+        modalName:null
       });
     } else {
       this.setData({
