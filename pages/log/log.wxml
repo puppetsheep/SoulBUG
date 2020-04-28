@@ -12,7 +12,7 @@
         <view class="cu-tag line-green">{{item.version||''}}</view>
       </view>
       <view class="margin-sm" wx:for="{{des[idx]}}" wx:key>
-      <view class="text-darkgray text-shadow">{{index+1}}.{{item||''}}</view>
+        <view class="text-darkgray text-shadow">{{index+1}}.{{item||''}}</view>
       </view>
     </view>
   </view>

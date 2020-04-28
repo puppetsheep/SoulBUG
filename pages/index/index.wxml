@@ -43,7 +43,7 @@
     <navigator url="../china/china">
       <view class="bg-gradual-orange padding radius text-center shadow-blur">
         <view class="text-lg">近现代史纲要</view>
-        <view class="margin-top-sm text-Abc">共 {{chinaCount||0}} 条</view>
+        <view class="margin-top-sm text-Abc">本词条不计入</view>
       </view>
     </navigator>
   </view>

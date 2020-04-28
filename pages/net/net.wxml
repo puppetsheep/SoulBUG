@@ -20,7 +20,7 @@
         <view class="content">{{item.en}}（{{item.zh}}）</view>
       </view>
       <view class="padding-xl text-gray text-left text-df" style="text-indent:2em;">
-        {{item.des}}
+        <text decode='true'>{{item.des}}</text>
       </view>
     <view class="cu-bar bg-white">
       <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
@@ -38,6 +38,6 @@
     </view>
   </view>
   <view class="padding bg-white text-df">
-    <view class="text-left text-gray padding-left" style="text-indent:2em;">{{item.des}}</view>
+    <view class="text-left text-gray padding-left" style="text-indent:2em;"><text decode='true'>{{item.des}}</text></view>
   </view>
 </view>

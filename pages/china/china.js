@@ -24,7 +24,7 @@ Page({
       responseType: 'text',
       success: function (res) {
         if (res.statusCode == 200) {
-           console.log(res.data)
+          //  console.log(res.data)
           that.setData({
             china: res.data.data
           })
@@ -50,13 +50,13 @@ Page({
     // console.log(e)
     if (e.scrollTop > 200) {
       this.setData({
-        floorstatus: true,
+        // floorstatus: true,
         modalName: null
       });
     } else {
-      this.setData({
-        floorstatus: false
-      });
+      // this.setData({
+      //   floorstatus: false
+      // });
     }
   },
   gotop: function (e) {  // 一键回到顶部
@@ -118,6 +118,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '灵魂BUG', // 分享标题
+      desc: '人性自有缺点，灵魂各有BUG', // 分享描述
+      path: 'pages/index/index' // 分享路径
+    }
   }
 })

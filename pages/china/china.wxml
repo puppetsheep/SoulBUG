@@ -7,42 +7,57 @@
     <view class="padding text-blue text-shadow">“本词条谨以大学教材为据，仅用于考点梳理”</view>
   </view>
 </view>
-<view class="cu-timeline" wx:for="{{china}}" wx:for-index="idx" wx:key>
-  <!-- <view class="cu-time">章节</view> -->
-  <view class="cu-item text-blue">
+
+
+<view class="cu-timeline" wx:for="{{china}}" wx:for-index="idx" wx:key="index">
+  <!-- <view class="cu-time"></view> -->
+  <view class="cu-item text-green">
     <view class="content">
       <view class="cu-capsule radius">
-        <view class="cu-tag bg-olive radius shadow">{{item.title||''}}</view>
+        <view class="cu-tag bg-gradual-green radius shadow">{{item.title||''}}</view>
       </view>
-      <view wx:for="{{china[idx].section}}" wx:for-index="idex" wx:key>
+      <view wx:for="{{china[idx].section}}" wx:for-index="idex" wx:key="index">
         <view class="cu-capsule radius">
-          <view class="cu-tag radius line-olive">{{item.subtitle||''}}</view>
+          <view class="cu-tag radius line-green" style="margin-left:-5px;">
+            <text decode='true'>{{item.subtitle||''}}</text>
+          </view>
         </view>
-        <view class="cu-tag bg-blue light radius fr shadow" bindtap="showModal" data-target="{{idex}}">考点串讲</view>
-        <view class="margin-sm" wx:for="{{china[idx].section[idex].content}}" wx:key>
-          <view class="text-darkgray text-shadow"><text class="cuIcon-title text-olive"></text><text decode='true'>{{item||''}}</text></view>
+        <view wx:key="index" wx:if="{{china[idx].section[idex].test}}" class="cu-tag bg-blue light radius fr" bindtap="showModal" data-target="{{'1'+idx+idex}}">考点串讲</view>
+        <view class="margin-sm" wx:for="{{china[idx].section[idex].content}}" wx:key="index">
+          <view class="text-darkgray text-shadow">
+            <text class="cuIcon-title text-olive"></text>
+            <text decode='true'>{{item.des||''}}</text>
+            <view class="text-gray" style="text-indent:2em;">
+              <text decode='true'>{{item.detail||''}}</text>
+            </view>
+
+          </view>
         </view>
       </view>
-    </view>
-  </view>
-<view wx:for="{{china[idx].section}}" wx:for-index="idex" catchtap="hideModal" class="margin-lg">
-  <view class="cu-modal {{modalName==idex?'show':''}}">
-    <view class="cu-dialog" catchtap>
-      <view class="cu-bar bg-white justify-end">
-        <view class="content">考点串讲</view>
-      </view>
-      <view class="padding text-blue text-left text-df" style="text-indent:2em;">
-        <text decode='true'>{{item.subtitle||''}}</text>
-      </view>
-      <view wx:for="{{china[idx].section[idex].test}}" wx:key>
-      <view class="padding-left padding-right padding-bottom text-darkgray text-left text-df" style="text-indent:2em;">
-        <text decode='true'>{{index+1}}.{{item||''}}</text>
-      </view>
-      </view>
-    <view class="cu-bar bg-white">
-      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
-    </view>
     </view>
   </view>
 </view>
+
+<view wx:for="{{china}}" wx:for-index="idx" wx:key="index">
+  <view wx:for="{{china[idx].section}}" wx:for-index="idex" catchtap="hideModal" class="margin-lg" wx:key="index">
+    <view class="cu-modal {{modalName=='1'+idx+idex?'show':''}}" style="z-index:99999">
+      <view class="cu-dialog" catchtap>
+        <view class="cu-bar bg-white justify-end">
+          <view class="content">考点串讲</view>
+        </view>
+        <view class="padding text-blue text-left text-df" style="text-indent:2em;">
+          <text decode='true'>{{item.subtitle||''}}</text>
+        </view>
+        <view wx:for="{{china[idx].section[idex].test}}" wx:key="index">
+          <view class="padding-left padding-right padding-bottom text-grey text-left text-df" style="text-indent:2em;">
+            <!-- <text decode='true'>{{index+1}}.{{item||''}}</text> -->
+            <rich-text nodes="{{item||''}}" selectable></rich-text>
+          </view>
+        </view>
+        <view class="cu-bar bg-white">
+          <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
