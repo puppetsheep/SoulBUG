@@ -1,0 +1,48 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">近现代史纲要</view>
+</cu-custom>
+<view class="solids-bottom padding-xs flex align-center">
+  <view class="flex-sub text-center">
+    <view class="padding text-blue text-shadow">“本词条谨以大学教材为据，仅用于考点梳理”</view>
+  </view>
+</view>
+<view class="cu-timeline" wx:for="{{china}}" wx:for-index="idx" wx:key>
+  <!-- <view class="cu-time">章节</view> -->
+  <view class="cu-item text-blue">
+    <view class="content">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-olive radius shadow">{{item.title||''}}</view>
+      </view>
+      <view wx:for="{{china[idx].section}}" wx:for-index="idex" wx:key>
+        <view class="cu-capsule radius">
+          <view class="cu-tag radius line-olive">{{item.subtitle||''}}</view>
+        </view>
+        <view class="cu-tag bg-blue light radius fr shadow" bindtap="showModal" data-target="{{idex}}">考点串讲</view>
+        <view class="margin-sm" wx:for="{{china[idx].section[idex].content}}" wx:key>
+          <view class="text-darkgray text-shadow"><text class="cuIcon-title text-olive"></text><text decode='true'>{{item||''}}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+<view wx:for="{{china[idx].section}}" wx:for-index="idex" catchtap="hideModal" class="margin-lg">
+  <view class="cu-modal {{modalName==idex?'show':''}}">
+    <view class="cu-dialog" catchtap>
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">考点串讲</view>
+      </view>
+      <view class="padding text-blue text-left text-df" style="text-indent:2em;">
+        <text decode='true'>{{item.subtitle||''}}</text>
+      </view>
+      <view wx:for="{{china[idx].section[idex].test}}" wx:key>
+      <view class="padding-left padding-right padding-bottom text-darkgray text-left text-df" style="text-indent:2em;">
+        <text decode='true'>{{index+1}}.{{item||''}}</text>
+      </view>
+      </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view>
+    </view>
+  </view>
+</view>
+</view>

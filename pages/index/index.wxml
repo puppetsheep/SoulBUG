@@ -23,19 +23,27 @@
       <view class="margin-top-sm text-Abc">共 {{jsCount||0}} 条</view>
     </view>
   </view> -->
-  <view class="padding-sm">
+  <!-- <view class="padding-sm">
     <navigator url="../math/math">
       <view class="bg-gradual-orange padding radius text-center shadow-blur">
         <view class="text-lg">数学公式</view>
         <view class="margin-top-sm text-Abc">共 {{mathCount||0}} 条</view>
       </view>
     </navigator>
-  </view>
+  </view> -->
   <view class="padding-sm">
     <navigator url="../net/net">
       <view class="bg-gradual-red padding radius text-center shadow-blur">
         <view class="text-lg">计算机网络术语</view>
         <view class="margin-top-sm text-Abc">共 {{networkCount||0}} 条</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="padding-sm">
+    <navigator url="../china/china">
+      <view class="bg-gradual-orange padding radius text-center shadow-blur">
+        <view class="text-lg">近现代史纲要</view>
+        <view class="margin-top-sm text-Abc">共 {{chinaCount||0}} 条</view>
       </view>
     </navigator>
   </view>
@@ -52,11 +60,6 @@
       <view class="text-lg">马克思主义基本原理概论</view>
       <view class="margin-top-sm text-Abc">共 {{maxCount||0}} 条</view>
     </view>
-  </view>
-  <view class="padding-sm">
-    <view class="bg-gradual-blue padding radius text-center shadow-blur">
-      <view class="text-lg">中国近现代史纲要</view>
-      <view class="margin-top-sm text-Abc">共 {{ChinaCount||0}} 条</view>
-    </view>
   </view> -->
+
 </view>

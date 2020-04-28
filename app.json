@@ -4,7 +4,8 @@
     "pages/guose/guose",
     "pages/math/math",
     "pages/log/log",
-    "pages/net/net"
+    "pages/net/net",
+    "pages/china/china"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -5,6 +5,7 @@ Page({
     colorCount:0,
     mathCount:0,
     networkCount:0,
+    chinaCount:0,
     version:'',
     ColorList: app.globalData.ColorList
   },
@@ -27,7 +28,8 @@ Page({
             colorCount: res.data.color,
             mathCount:res.data.math,
             networkCount:res.data.network,
-            counting:res.data.math + res.data.color+res.data.network
+            chinaCount: res.data.china,
+            counting:res.data.network + res.data.color+res.data.china
           })
         }
 
