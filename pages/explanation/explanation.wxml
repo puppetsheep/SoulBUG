@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">详细说明</view>
+</cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom-sm text-lg  text-grey'>"灵魂BUG"详细说明</view>
+  <view class='text-content'>
+    <view wx:for="{{exp}}" wx:key="index" wx:for-index="idx">
+      <view class='margin-top-sm'>{{item.title}}</view>
+      <view wx:for="{{exp[idx].content}}" wx:key="index">
+        <view class="text-grey">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -5,12 +5,15 @@
     "pages/math/math",
     "pages/log/log",
     "pages/net/net",
-    "pages/china/china"
+    "pages/china/china",
+    "pages/about/about",
+    "pages/info/info",
+    "pages/explanation/explanation"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ColorUI",
+    "navigationBarTitleText": "SoulBUG",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },

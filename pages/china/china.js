@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    china: []
+    china: [],
+    pageindex:0
   },
 
   /**
@@ -14,7 +15,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'https://api.puppetsheep.cn/miniprogram/china.json',
+      url: 'https://api.puppetsheep.cn/miniprogram/exchina.json',
       data: '',
       header: {
         'content-type': 'application/json'
@@ -35,6 +36,16 @@ Page({
       complete: function (res) { },
     })
   },
+  pagenext(e){
+    this.setData({
+      pageindex:this.data.pageindex - 1
+    })
+  },
+  pageback(e){
+    this.setData({
+      pageindex: this.data.pageindex + 1
+    })
+  },
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target
@@ -44,19 +55,29 @@ Page({
   hideModal(e) {
     this.setData({
       modalName: null
-    })
+    });
+    setTimeout(() => {
+      this.setData({
+        pageindex: 0
+      })
+    }, 600)
   },
   onPageScroll: function (e) {
     // console.log(e)
     if (e.scrollTop > 200) {
       this.setData({
-        // floorstatus: true,
+        floorstatus: true,
         modalName: null
       });
+      setTimeout(()=>{
+        this.setData({
+          pageindex: 0
+        })
+      },600)
     } else {
-      // this.setData({
-      //   floorstatus: false
-      // });
+      this.setData({
+        floorstatus: false
+      });
     }
   },
   gotop: function (e) {  // 一键回到顶部

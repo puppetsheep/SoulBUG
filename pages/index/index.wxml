@@ -4,7 +4,8 @@
 <view class="margin-xl padding-xl bg-white radius shadow shadow-lg">
   <view class="flex justify-center">
     <view class="text-center">
-      <text class="text-grey text-xl">目前共收录 {{counting||0}} 条</text>
+      <text class="text-grey text-xl">请求的艺术总是比请求的技术有趣</text>
+      <!-- <text class="text-grey text-xl">目前共收录 {{counting||0}} 条</text> -->
     </view>
   </view>
 </view>
@@ -13,7 +14,7 @@
     <navigator url="../guose/guose">
       <view class="bg-gradual-pink padding radius text-center shadow-blur">
         <view class="text-lg">中国传统色</view>
-        <view class="margin-top-sm text-Abc">共 {{colorCount||0}} 条</view>
+        <view class="margin-top-sm text-Abc">千百色，识几何？</view>
       </view>
     </navigator>
   </view>
@@ -35,15 +36,29 @@
     <navigator url="../net/net">
       <view class="bg-gradual-red padding radius text-center shadow-blur">
         <view class="text-lg">计算机网络术语</view>
-        <view class="margin-top-sm text-Abc">共 {{networkCount||0}} 条</view>
+        <view class="margin-top-sm text-Abc">90%的人看不懂</view>
       </view>
     </navigator>
   </view>
   <view class="padding-sm">
     <navigator url="../china/china">
       <view class="bg-gradual-orange padding radius text-center shadow-blur">
-        <view class="text-lg">近现代史纲要</view>
-        <view class="margin-top-sm text-Abc">本词条不计入</view>
+        <view class="text-lg">中国近现代史纲要笔记</view>
+        <view class="margin-top-sm text-Abc">考点笔记梳理</view>
+      </view>
+    </navigator>
+  </view>
+  <!-- <view class="padding-sm" bindtap="gongyang">
+    <view class="bg-gradual-yellow padding radius text-center shadow-blur">
+      <view class="text-lg">公羊阅读</view>
+      <view class="margin-top-sm text-Abc">小说阅读小程序</view>
+    </view>
+  </view> -->
+  <view class="padding-sm">
+    <navigator url="../about/about">
+      <view class="bg-gradual-green padding radius text-center shadow-blur">
+        <view class="text-lg">关于本小程序的相关说明</view>
+        <view class="margin-top-sm text-abc">都是秘密~</view>
       </view>
     </navigator>
   </view>
@@ -55,6 +70,7 @@
       </view>
     </navigator>
   </view>
+  
   <!-- <view class="padding-sm">
     <view class="bg-gradual-green padding radius text-center shadow-blur">
       <view class="text-lg">马克思主义基本原理概论</view>

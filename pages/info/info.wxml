@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">基本信息</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于"灵魂BUG"</view>
+  <view class='text-content'>
+    <view>开发者：<text class="text-grey">{{info.author||'puppetsheep'}}</text></view>
+    <view class='margin-top-sm'>公众号：<text class="text-grey">灵魂API</text></view>
+    <view class='margin-top-sm'>参与开发的作品：<text class="text-grey">{{info.join||"请求失败了"}}</text></view>
+    <view class='margin-top-sm'>简介：<text class="text-grey">{{info.content||"赶紧反馈"}}</text></view>
+    <view class='margin-top-sm'>版权所属：<text class="text-grey">©2020 by puppetsheep</text></view>
+  </view>
+</view>

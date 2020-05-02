@@ -24,18 +24,26 @@ Page({
         if (res.statusCode == 200) {
           // console.log(res.data)
           that.setData({
-            version:res.data.version,
-            colorCount: res.data.color,
-            mathCount:res.data.math,
-            networkCount:res.data.network,
-            chinaCount: res.data.china,
-            counting:res.data.network + res.data.color+res.data.china
+            version:res.data.version
           })
         }
 
       },
       fail: function (res) { },
       complete: function (res) { },
+    })
+  },
+  gongyang(){
+    wx.navigateToMiniProgram({
+      appId: 'wx52d2bf5809cd0743',
+      // path: '',
+      // extraData: {
+      //   foo: 'bar'
+      // },
+      envVersion: 'release',
+      success(res) {
+        // 打开成功
+      }
     })
   },
   onShareAppMessage: function () {
